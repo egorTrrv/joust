@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME:Joust</title>
+    <script type="text/javascript" src="brython_stdlib.js"></script>
+    <script type="text/javascript" src="brython_modules.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython_stdlib.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        h1 {
+            text-align: center;
+            font-family: 'Old English Text MT', fantasy;
+            font-size: 7em;
+            color: #F5F5DC;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+		#background-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.8); /* Черный цвет с коэффициентом прозрачности 0.7 */
+			z-index: -1; /* Разместите его под фоновым изображением */
+		}
+
+		body {
+			background-image: url('joust.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+			font-family: monospace;
+		}
+
+
+        #container {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: space-evenly;
+            align-items: stretch;
+        }
+
+
+
+		#console {
+			width: 800px;
+			height: 450px;
+			border: none;
+			background-color: rgba(0, 0, 0, 0.09);
+			overflow-y: scroll;
+			padding: 10px;
+			color: white; /* Измените цвет текста на белый */
+			margin-bottom: 10px;
+		}
+
+		#console::-webkit-scrollbar {
+			width: 1px; /* Ширина ползунка */
+		}
+		#console::-webkit-scrollbar-thumb {
+			background-color: #000; /* Цвет ползунка */
+		}
+
+		#console::-webkit-scrollbar-track {
+			background-color: rgba(255, 255, 255, 0); /* Цвет фона ползунка */
+		}
+        #input {
+            width: 800px;
+			border: none; /* Убрать границу */
+            padding: 5px;
+            background-color: black;
+            color: white;
+        }
+
+
+
+        button.btn:hover {
+            background: #8B4513;
+        }
+
+        button.btn:active {
+            background: #A0522D;
+            box-shadow: 0 3px #A0522D inset;
+        }
+    </style>
+</head>
+
+<body onload="brython()">
+    <div id="background-overlay"></div>
+    <div id="container">
+        <div id="game-title">
+            <h1>Joust</h1>
+        </div>
+        <div id="console"></div>
+        <input id="input" type="text" placeholder="Enter the answer">
+    </div>
+    <script type="text/python" src="joust2.py">
+
+    </script>
+
+</body>
+
+</html>
